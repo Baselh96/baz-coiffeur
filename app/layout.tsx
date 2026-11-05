@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/salon-main-2.jpeg", // Pfad zu deinem Bild im public-Ordner
+        url: "/images/favicon-square.png", // Pfad zu deinem Bild im public-Ordner
         width: 1200,
         height: 630,
         alt: "BAZ Coiffeur Salon Zürich Oerlikon",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BAZ Coiffeur | Zürich Oerlikon",
     description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege.",
-    images: ["/images/salon-main-2.jpeg"],
+    images: ["/images/favicon-square.png"],
   },
 };
 
@@ -59,9 +59,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "HairSalon",
     name: "BAZ Coiffeur",
-    image: "https://baz-coiffeur.ch/images/rezeption.jpeg", // Absolute URL empfohlen für Schema.org
+    image: "https://baselh96.github.io/baz-coiffeur/images/rezeption.jpeg", // Absolute URL empfohlen für Schema.org
     telephone: "+41438172525",
-    url: "https://baz-coiffeur.ch",
+    url: "https://baselh96.github.io/baz-coiffeur",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Franklinstrasse 5",
