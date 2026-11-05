@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  output: "export",
+  images: {
+    unoptimized: true, // GitHub Pages unterstützt Next.js Image Optimization standardmäßig nicht
+  },
 };
 
 export default nextConfig;
