@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
-  basePath: isProd ? `/${repoName}` : "",
+  /* basePath: `/${repoName}`, */
   assetPrefix: isProd ? `/${repoName}/` : "",
   output: "export",
   images: {
