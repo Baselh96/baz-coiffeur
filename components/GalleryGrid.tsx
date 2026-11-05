@@ -4,6 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { useLanguage } from "./LanguageContext";
+import { getAssetPath } from "@/utils/getAssetPath";
 
 const galleryImages = [
   {
@@ -164,7 +165,7 @@ export default function GalleryGrid() {
               className="relative h-72 rounded-2xl overflow-hidden shadow-md border border-neutral-200 dark:border-neutral-800 group"
             >
               <Image
-                src={img.src}
+                src={getAssetPath(img.src)}
                 alt={translatedTitle}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

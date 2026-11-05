@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "./LanguageContext";
+import { getAssetPath } from "@/utils/getAssetPath";
 export default function SalonInsightSection() {
   const { t } = useLanguage();
 
@@ -17,7 +18,7 @@ export default function SalonInsightSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div className="relative h-72 rounded-xl overflow-hidden shadow-md border border-neutral-200 dark:border-neutral-800">
           <Image 
-            src="/images/salon-main.jpeg" 
+            src={getAssetPath("/images/salon-main.jpeg")} 
             alt="Barber Bereich" 
             fill 
             className="object-cover hover:scale-105 transition-transform duration-300" 
@@ -25,7 +26,7 @@ export default function SalonInsightSection() {
         </div>
         <div className="relative h-72 rounded-xl overflow-hidden shadow-md border border-neutral-200 dark:border-neutral-800">
           <Image 
-            src="/images/wartezimmer.jpeg" 
+            src={getAssetPath("/images/wartezimmer.jpeg")} 
             alt="Wartebereich" 
             fill 
             className="object-cover hover:scale-105 transition-transform duration-300" 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import { SALON_DATA } from "@/data/salonData";
 import { useLanguage } from "./LanguageContext";
+import { getAssetPath } from "@/utils/getAssetPath";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ export default function Hero() {
     <section className="relative h-[100svh] min-h-[700px] w-full flex flex-col justify-between text-white text-center overflow-hidden">
       {/* 1. Hintergrundbild - deckt kompletten Bildschirm ab */}
       <Image
-        src="/images/salon-main.jpeg"
+        src={getAssetPath("/images/salon-main.jpeg")}
         alt="BAZ Coiffeur Salon"
         fill
         className="object-cover"

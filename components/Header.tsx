@@ -9,6 +9,7 @@ import { Menu, X, Sun, Moon, Globe } from "lucide-react";
 import { useTheme } from "next-themes";
 import { SALON_DATA } from "@/data/salonData";
 import { useLanguage } from "./LanguageContext";
+import { getAssetPath } from "@/utils/getAssetPath";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,7 +75,7 @@ export default function Header() {
         <Link href="/" className="flex items-center shrink-0">
           <div className="relative h-26 w-15 -my-2">
             <Image
-              src="/images/logo.png"
+              src={getAssetPath("/images/logo.png")}
               alt={SALON_DATA.name}
               fill
               priority
