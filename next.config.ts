@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  basePath: "/baz-coiffeur",
   output: "export",
   images: {
     unoptimized: true, // GitHub Pages unterstützt Next.js Image Optimization standardmäßig nicht

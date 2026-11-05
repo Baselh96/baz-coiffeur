@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://9nwnv5t9-3000.uks1.devtunnels.ms"),
+  metadataBase: new URL("https://baselh96.github.io/baz-coiffeur"),
   title: "BAZ Coiffeur | Zürich Oerlikon",
   description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege und Styling an der Franklinstrasse 5.",
   icons: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BAZ Coiffeur | Zürich Oerlikon",
     description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege.",
-    url: "https://9nwnv5t9-3000.uks1.devtunnels.ms", // Passe dies an deine finale Domain an
+    url: "https://baselh96.github.io/baz-coiffeur", // Passe dies an deine finale Domain an
     siteName: "BAZ Coiffeur",
     locale: "de_CH",
     type: "website",
