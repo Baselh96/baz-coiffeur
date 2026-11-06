@@ -73,7 +73,7 @@ export const translations = {
         wash: "Waschbereich",
       },
       titles: {
-        barberChairs: "Herren- & Barberstühle",
+        barberChairs: "Salon",
         reception: "Empfang & Produkte",
         lounge: "Lounge & Wartebereich",
         menCut: "Haarschnitt Herren",
@@ -168,7 +168,7 @@ export const translations = {
         wash: "Washing Area",
       },
       titles: {
-        barberChairs: "Men's & Barber Chairs",
+        barberChairs: "Salon",
         reception: "Reception & Products",
         lounge: "Lounge & Waiting Area",
         menCut: "Men's Haircut",
@@ -190,6 +190,101 @@ export const translations = {
       closed: "Closed",
     },
   },
+  ar: {
+    header: {
+      home: "الرئيسية",
+      services: "الخدمات",
+      gallery: "المعرض",
+      contact: "اتصل بنا",
+    },
+    hero: {
+      title: "BAZ Coiffeur",
+      subtitle: "صالون حلاقة لكل أفراد العائلة – زيورخ أورليكون",
+      callBtn: "اتصل الآن",
+      servicesBtn: "خدماتنا",
+      scroll: "تمرير",
+    },
+    home: {
+      parking: "توفر مواقف سيارات رقم 7 و 8 خلف المبنى",
+      welcomeTitle: "أهلاً بك في",
+      welcomeText:
+        "صالون حلاقة لكل أفراد العائلة في زيورخ أورليكون. نضع الجودة، النظافة، الاستشارة الشخصية ورضا زبائننا في قمة أولوياتنا.",
+      features: {
+        quality: {
+          title: "الجودة والأناقة",
+          desc: "سواء كنت تبحث عن إطلالة عصرية أو قصة شعر كلاسيكية - فنحن نبتكر النمط الذي يناسبك تماماً.",
+        },
+        hygiene: {
+          title: "النظافة والتعقيم",
+          desc: "البيئة النظيفة والأدوات المعقمة هي أساس كل خدمة نقدمها.",
+        },
+        family: {
+          title: "لكل أفراد العائلة",
+          desc: "عروض خاصة وأجواء مريحة للرجال، السيدات والأطفال.",
+        },
+      },
+      servicesTitle: "خدماتنا",
+      services: {
+        men: "رجال",
+        women: "سيدات",
+        kids: "أطفال",
+        popular: "شائع",
+      },
+      servicesList: {
+        herren: [
+          "قصات شعر عصرية وكلاسيكية",
+          "العناية باللحية وتشذيبها",
+          "إزالة شعر الأنف والأذن بالشمع",
+          "رسم وتنظيم الحواجب بتقنية الخيط",
+        ],
+        damen: [
+          "قصات شعر مخصصة",
+          "صبغ الشعر باحترافية",
+          "خصل وملون الشعر (ميِش)",
+          "رسم وتنظيم الحواجب بتقنية الخيط",
+        ],
+        kinder: ["قصات شعر للأطفال"],
+      },
+      salonInsightTitle: "لمحة داخل صالوننا",
+      salonInsightText:
+        "تفضل بزيارتنا في فرانكلينشتراسه 5 في زيورخ أورليكون واستمتع بخدماتنا في أجواء مريحة ومرحبة.",
+      galleryBtn: "عرض جميع صور المعرض",
+    },
+    gallery: {
+      title: "معرض الصور",
+      subtitle:
+        "أخذ نظرة على مرافقنا والأجواء المميزة في صالون BAZ Coiffeur.",
+      categories: {
+        all: "الكل",
+        salon: "الصالون",
+        men: "رجال",
+        women: "سيدات",
+        kids: "أطفال",
+        wash: "منطقة الغسيل",
+      },
+      titles: {
+        barberChairs: "الصالون",
+        reception: "الاستقبال والمنتجات",
+        lounge: "صالة الانتظار والاسترخاء",
+        menCut: "قصة شعر رجالية",
+        womenCut: "قصة شعر نسائية",
+        kidsCut: "قصة شعر للأطفال",
+        washArea: "منطقة غسل الشعر",
+      },
+    },
+    contact: {
+      title: "التواصل والموقع",
+      addressTitle: "العنوان ومعلومات التواصل",
+      openInMaps: "فتح في خرائط جوجل",
+      parkingTitle: "خيارات وقوف السيارات",
+      parkingDesc: "توفر مواقف سيارات رقم 7 و 8 خلف المبنى",
+      hoursTitle: "ساعات العمل",
+      weekdays: "الإثنين – الجمعة",
+      saturday: "السبت",
+      sunday: "الأحد",
+      closed: "مغلق",
+    },
+  },
 };
 
-export type Locale = "de" | "en";
+export type Locale = "de" | "en" | "ar";

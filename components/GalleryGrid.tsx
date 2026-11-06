@@ -13,12 +13,28 @@ const galleryImages = [
     category: "salon",
   },
   {
-    src: "/images/salon-main-2.jpeg",
+    src: "/images/salon-5.jpeg",
+    titleKey: "barberChairs",
+    category: "salon",
+  },
+  {
+    src: "/images/salon-3.jpeg",
+    titleKey: "barberChairs",
+    category: "salon",
+  },
+  {
+    src: "/images/salon-4.jpeg",
+    titleKey: "barberChairs",
+    category: "salon",
+  },
+  {
+    src: "/images/salon-2.jpeg",
     titleKey: "barberChairs",
     category: "salon",
   },
   { src: "/images/rezeption.jpeg", titleKey: "reception", category: "salon" },
   { src: "/images/wartezimmer.jpeg", titleKey: "lounge", category: "salon" },
+  { src: "/images/salon-6.jpeg", titleKey: "washArea", category: "salon" },
   {
     src: "/images/haarschnitt-herren-1.jpeg",
     titleKey: "menCut",
@@ -44,7 +60,26 @@ const galleryImages = [
     titleKey: "menCut",
     category: "men",
   },
-
+{
+    src: "/images/haarschnitt-herren-6.jpeg",
+    titleKey: "menCut",
+    category: "men",
+  },
+  {
+    src: "/images/haarschnitt-herren-7.jpeg",
+    titleKey: "menCut",
+    category: "men",
+  },
+  {
+    src: "/images/haarschnitt-herren-8.jpeg",
+    titleKey: "menCut",
+    category: "men",
+  },
+  {
+    src: "/images/haarschnitt-damen-9.jpeg",
+    titleKey: "womenCut",
+    category: "women",
+  },
   {
     src: "/images/haarschnitt-damen-1.jpeg",
     titleKey: "womenCut",
@@ -121,11 +156,9 @@ const galleryImages = [
     titleKey: "kidsCut",
     category: "kids",
   },
-
-  { src: "/images/waschplatz-1.jpeg", titleKey: "washArea", category: "wash" },
 ];
 
-const categoryKeys = ["all", "salon", "men", "women", "kids", "wash"] as const;
+const categoryKeys = ["all", "salon", "men", "women", "kids"] as const;
 
 export default function GalleryGrid() {
   const { t } = useLanguage();

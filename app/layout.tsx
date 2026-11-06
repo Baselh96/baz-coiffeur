@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/favicon-square.png", // Pfad zu deinem Bild im public-Ordner
+        url: "/images/salon-main.jpeg", // Pfad zu deinem Bild im public-Ordner
         width: 1200,
         height: 630,
         alt: "BAZ Coiffeur Salon Zürich Oerlikon",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BAZ Coiffeur | Zürich Oerlikon",
     description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege.",
-    images: ["/images/favicon-square.png"],
+    images: ["/images/salon-main.jpeg"],
   },
 };
 
@@ -59,7 +59,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "HairSalon",
     name: "BAZ Coiffeur",
-    image: "https://baselh96.github.io/baz-coiffeur/images/rezeption.jpeg", // Absolute URL empfohlen für Schema.org
+    image: "https://baselh96.github.io/baz-coiffeur/images/salon-main.jpeg", // Absolute URL empfohlen für Schema.org
     telephone: "+41438172525",
     url: "https://baselh96.github.io/baz-coiffeur",
     address: {
@@ -92,7 +92,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="de" suppressHydrationWarning>
+    <html lang="de" dir="ltr" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

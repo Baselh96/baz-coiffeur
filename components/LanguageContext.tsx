@@ -17,14 +17,20 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("baz_locale") as Locale;
-    if (saved === "de" || saved === "en") {
+    if (saved === "de" || saved === "en" || saved === "ar") {
       setLocaleState(saved);
+      document.documentElement.dir = saved === "ar" ? "rtl" : "ltr";
+      document.documentElement.lang = saved;
     }
   }, []);
 
   const setLocale = (newLocale: Locale) => {
     setLocaleState(newLocale);
     localStorage.setItem("baz_locale", newLocale);
+
+    // Dynamisch HTML-Richtung und Sprache im DOM aktualisieren
+    document.documentElement.dir = newLocale === "ar" ? "rtl" : "ltr";
+    document.documentElement.lang = newLocale;
   };
 
   const t = (path: string): any => {

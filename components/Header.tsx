@@ -1,18 +1,20 @@
 // src/components/Header.tsx
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, X, Sun, Moon, Globe } from "lucide-react";
 import { useTheme } from "next-themes";
+import { Globe, Sun, Moon, Menu, X, Check } from "lucide-react";
 import { SALON_DATA } from "@/data/salonData";
-import { useLanguage } from "./LanguageContext";
 import { getAssetPath } from "@/utils/getAssetPath";
+import { Locale } from "@/data/translations";
+import { useLanguage } from "./LanguageContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const { locale, setLocale, t } = useLanguage();
@@ -39,6 +41,12 @@ export default function Header() {
     { name: t("header.services"), href: "/#services" },
     { name: t("header.gallery"), href: "/galerien" },
     { name: t("header.contact"), href: "/kontakt" },
+  ];
+
+  const languages: { code: Locale; label: string; native: string }[] = [
+    { code: "de", label: "Deutsch", native: "Deutsch" },
+    { code: "en", label: "English", native: "English" },
+    { code: "ar", label: "Arabisch", native: "العربية" },
   ];
 
   const isActive = (href: string) => {
@@ -123,19 +131,42 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           {mounted && (
             <>
-              {/* Language Switcher */}
-              <button
-                onClick={() => setLocale(locale === "de" ? "en" : "de")}
-                className={`px-3 h-8 rounded-full flex items-center gap-1.5 text-xs font-semibold border transition ${
-                  isOverHero
-                    ? "bg-white/10 text-white border-white/10 hover:bg-white/20"
-                    : "bg-black/[0.05] dark:bg-white/[0.08] border-black/[0.08] text-black dark:text-white hover:bg-black/[0.08]"
-                }`}
-                title="Sprache wechseln / Change language"
-              >
-                <Globe className="w-3.5 h-3.5 text-gold-custom" />
-                <span>{locale.toUpperCase()}</span>
-              </button>
+              {/* Language Dropdown Container */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className={`px-3 h-8 rounded-full flex items-center gap-1.5 text-xs font-semibold border transition ${
+                    isOverHero
+                      ? "bg-white/10 text-white border-white/10 hover:bg-white/20"
+                      : "bg-black/[0.05] dark:bg-white/[0.08] border-black/[0.08] text-black dark:text-white hover:bg-black/[0.08]"
+                  }`}
+                  title="Sprache wechseln / Change language"
+                >
+                  <Globe className="w-3.5 h-3.5 text-gold-custom" />
+                  <span>{locale.toUpperCase()}</span>
+                </button>
+
+                {/* Dropdown Menu */}
+                {isLangOpen && (
+                  <div className="absolute end-0 mt-2 w-40 bg-white dark:bg-neutral-900 rounded-2xl py-2 shadow-xl border border-black/5 dark:border-white/10 z-50">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setLocale(lang.code);
+                          setIsLangOpen(false);
+                        }}
+                        className={`w-full px-4 py-2 text-xs flex items-center justify-between transition hover:bg-black/[0.04] dark:hover:bg-white/[0.06] ${
+                          locale === lang.code ? "font-bold text-gold-custom" : "text-black/80 dark:text-white/80"
+                        }`}
+                      >
+                        <span>{lang.native}</span>
+                        {locale === lang.code && <Check className="w-3.5 h-3.5 text-gold-custom" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* Theme Switcher */}
               <button
@@ -156,18 +187,40 @@ export default function Header() {
         <div className="flex md:hidden items-center gap-2">
           {mounted && (
             <>
-              {/* Mobile Language Switcher */}
-              <button
-                onClick={() => setLocale(locale === "de" ? "en" : "de")}
-                className={`px-2.5 h-8 rounded-full flex items-center gap-1 text-xs font-semibold border ${
-                  isOverHero
-                    ? "text-white border-white/20 bg-white/10 backdrop-blur-md"
-                    : "text-black dark:text-white border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06]"
-                }`}
-              >
-                <Globe className="w-3.5 h-3.5 text-gold-custom" />
-                <span>{locale.toUpperCase()}</span>
-              </button>
+              {/* Mobile Language Dropdown Container */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className={`px-2.5 h-8 rounded-full flex items-center gap-1 text-xs font-semibold border ${
+                    isOverHero
+                      ? "text-white border-white/20 bg-white/10 backdrop-blur-md"
+                      : "text-black dark:text-white border-black/10 dark:border-white/10 bg-black/[0.03] dark:bg-white/[0.06]"
+                  }`}
+                >
+                  <Globe className="w-3.5 h-3.5 text-gold-custom" />
+                  <span>{locale.toUpperCase()}</span>
+                </button>
+
+                {isLangOpen && (
+                  <div className="absolute end-0 mt-2 w-40 bg-white dark:bg-neutral-900 rounded-2xl py-2 shadow-xl border border-black/5 dark:border-white/10 z-50">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => {
+                          setLocale(lang.code);
+                          setIsLangOpen(false);
+                        }}
+                        className={`w-full px-4 py-2 text-xs flex items-center justify-between transition hover:bg-black/[0.04] dark:hover:bg-white/[0.06] ${
+                          locale === lang.code ? "font-bold text-gold-custom" : "text-black/80 dark:text-white/80"
+                        }`}
+                      >
+                        <span>{lang.native}</span>
+                        {locale === lang.code && <Check className="w-3.5 h-3.5 text-gold-custom" />}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* Mobile Theme Switcher */}
               <button
@@ -234,4 +287,3 @@ export default function Header() {
     </header>
   );
 }
-
