@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { translations } from "@/data/translations";
+import { getBasePath } from "@/utils/getBasePath";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
       follow: true,
       noarchive: true,
     },
-  metadataBase: new URL("https://baselh96.github.io/baz-coiffeur"),
+  metadataBase: new URL(getBasePath()),
   title: meta.title,
   description: meta.desc, 
   icons: [
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: meta.title,
     description: meta.desc,
-    url: "https://baselh96.github.io/baz-coiffeur", // Passe dies an deine finale Domain an
+    url: getBasePath(), // Passe dies an deine finale Domain an
     siteName: "BAZ Coiffeur",
     locale: "de_CH",
     type: "website",
@@ -68,9 +69,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "HairSalon",
     name: "BAZ Coiffeur",
-    image: "https://baselh96.github.io/baz-coiffeur/images/salon-main.jpeg", // Absolute URL empfohlen für Schema.org
+    image: getBasePath("/images/salon-main.jpeg"), // Absolute URL empfohlen für Schema.org
     telephone: "+41438172525",
-    url: "https://baselh96.github.io/baz-coiffeur",
+    url: getBasePath(),
     address: {
       "@type": "PostalAddress",
       streetAddress: "Franklinstrasse 5",
