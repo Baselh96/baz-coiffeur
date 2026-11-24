@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageContext";
+import { translations } from "@/data/translations";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,20 +16,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const meta = translations.de.metadata;
+
 export const metadata: Metadata = {
+    publisher: "BAZ Coiffeur",
+    robots: {
+      index: true,
+      follow: true,
+      noarchive: true,
+    },
   metadataBase: new URL("https://baselh96.github.io/baz-coiffeur"),
-  title: "BAZ Coiffeur | Zürich Oerlikon",
-  description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege und Styling an der Franklinstrasse 5.",
+  title: meta.title,
+  description: meta.desc, 
   icons: [
-    { rel: "icon", url: "/images/favicon-square.png" },
-    { rel: "shortcut icon", url: "/images/favicon-square.png" },
-    { rel: "apple-touch-icon", url: "/images/favicon-square.png" },
+    { rel: "icon", url: "/image.png" },
+    { rel: "shortcut icon", url: "/image.png" },
+    { rel: "apple-touch-icon", url: "/image.png" },
   ],
   keywords: ["Coiffeur", "Zürich Oerlikon", "Haarschnitt", "Barber", "BAZ Coiffeur", "Franklinstrasse"],
   authors: [{ name: "BAZ Coiffeur" }],
   openGraph: {
-    title: "BAZ Coiffeur | Zürich Oerlikon",
-    description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege.",
+    title: meta.title,
+    description: meta.desc,
     url: "https://baselh96.github.io/baz-coiffeur", // Passe dies an deine finale Domain an
     siteName: "BAZ Coiffeur",
     locale: "de_CH",
@@ -38,13 +47,13 @@ export const metadata: Metadata = {
         url: "/images/salon-main.jpeg", // Pfad zu deinem Bild im public-Ordner
         width: 1200,
         height: 630,
-        alt: "BAZ Coiffeur Salon Zürich Oerlikon",
+        alt: meta.title,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BAZ Coiffeur | Zürich Oerlikon",
+    title: meta.title,
     description: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege.",
     images: ["/images/salon-main.jpeg"],
   },

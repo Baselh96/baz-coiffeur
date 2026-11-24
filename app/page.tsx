@@ -4,6 +4,15 @@ import ParkingBanner from "@/components/ParkingBanner";
 import PhilosophySection from "@/components/PhilosophySection";
 import ServicesSection from "@/components/ServicesSection";
 import SalonInsightSection from "@/components/SalonInsightSection";
+import { Metadata } from "next";
+import { translations } from "@/data/translations";
+
+const meta = translations.de.metadata;
+
+export const metadata: Metadata = {
+  title: meta.title,
+  description: meta.desc,
+};
 
 export default function HomePage() {
   return (

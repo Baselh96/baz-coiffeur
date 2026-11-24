@@ -1,6 +1,10 @@
 // src/data/translations.ts
 export const translations = {
   de: {
+    metadata: {
+      title: "BAZ Coiffeur | Zürich Oerlikon",
+      desc: "Ihr Coiffeur für die ganze Familie in Zürich Oerlikon. Professionelle Haarschnitte, Bartpflege und Styling an der Franklinstrasse 5.",
+    },
     header: {
       home: "Home",
       services: "Dienstleistungen",
@@ -96,6 +100,10 @@ export const translations = {
     },
   },
   en: {
+    metadata: {
+      title: "BAZ Coiffeur | Zurich Oerlikon",
+      desc: "Your hairdresser for the whole family in Zurich Oerlikon. Professional haircuts, beard grooming, and styling at Franklinstrasse 5.",
+    },
     header: {
       home: "Home",
       services: "Services",
@@ -191,6 +199,10 @@ export const translations = {
     },
   },
   ar: {
+    metadata: {
+      title: "BAZ Coiffeur | Zürich Oerlikon",
+      desc: "صالون حلاقة لكل أفراد العائلة في زيورخ أورليكون. قصات شعر احترافية، عناية باللحية وتصفيف الشعر في فرانكلينشتراسه 5.",
+    },
     header: {
       home: "الرئيسية",
       services: "الخدمات",
@@ -252,8 +264,7 @@ export const translations = {
     },
     gallery: {
       title: "معرض الصور",
-      subtitle:
-        "أخذ نظرة على مرافقنا والأجواء المميزة في صالون BAZ Coiffeur.",
+      subtitle: "أخذ نظرة على مرافقنا والأجواء المميزة في صالون BAZ Coiffeur.",
       categories: {
         all: "الكل",
         salon: "الصالون",
