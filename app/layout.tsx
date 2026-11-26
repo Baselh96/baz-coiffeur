@@ -30,16 +30,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(getBasePath()),
   title: meta.title,
   description: meta.desc, 
-/*   icons: [
-    { rel: "icon", url: "/image.png" },
-    { rel: "shortcut icon", url: "/image.png" },
-    { rel: "apple-touch-icon", url: "/image.png" },
-  ],
-  icons: [
-    { rel: "icon", url: getAssetPath("/images/favicon-square.png") },
-    { rel: "shortcut icon", url: getAssetPath("/images/favicon-square.png") },
-    { rel: "apple-touch-icon", url: getAssetPath("/images/favicon-square.png") },
-  ], */
   keywords: ["Coiffeur", "Zürich Oerlikon", "Haarschnitt", "Barber", "BAZ Coiffeur", "Franklinstrasse"],
   authors: [{ name: "BAZ Coiffeur" }],
   openGraph: {

@@ -32,8 +32,8 @@ jobs:
 
       - name: Build static site
         env:
-          NEXT_PUBLIC_BASE_PATH: "/baz-coiffeur"
-          NEXT_PUBLIC_BASE_URL: "https://baselh96.github.io"
+          NEXT_PUBLIC_BASE_PATH: ""
+          NEXT_PUBLIC_BASE_URL: "https://baz-coiffeur.ch"
         run: npm run build
 
       - name: Upload artifact
